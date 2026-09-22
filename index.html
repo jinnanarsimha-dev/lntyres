@@ -5,7 +5,8 @@
 <meta name="color-scheme" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Lakshmi Narasimha Tyres – Tyres delivered across India</title>
-<meta name="description" content="Buy bike, car, auto, tractor and lorry tyres online from Lakshmi Narasimha Tyres. All leading brands, delivered across India. Order on WhatsApp 99899 00961.">
+<meta name="description" content="Buy bike, car, auto, tractor and lorry tyres online from Lakshmi Narasimha Tyres. All leading brands, delivered across India. Order online or call 99899 00961.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 92%27%3E%3Cpolygon points=%2724,22 26,6 33,14 40,2 47,14 54,6 56,22%27 fill=%27%23B8913A%27/%3E%3Ccircle cx=%2740%27 cy=%2759%27 r=%2731%27 fill=%27none%27 stroke=%27%23B8913A%27 stroke-width=%273%27/%3E%3Ccircle cx=%2740%27 cy=%2759%27 r=%2722%27 fill=%27%2323307A%27/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,7 +21,7 @@
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+html{scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
 body{margin:0;background:var(--bg);color:var(--text);
   font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.6}
 a{color:inherit}
@@ -28,9 +29,10 @@ a{color:inherit}
 
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(255,255,255,.96);color:var(--ink);
   border-bottom:1px solid #E6D7B0;box-shadow:0 1px 0 #F3ECDA}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
 .mark{display:flex;align-items:center;gap:10px;text-decoration:none}
-.mark b{font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;font-weight:700}
+.mark b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:21px;font-weight:700;line-height:1.05}
+.mark small{display:block;font-size:11px;font-weight:700;letter-spacing:.32em;color:#9C7A2E;margin-top:3px}
 .top nav{display:flex;gap:22px;font-size:14px}
 .top nav a{text-decoration:none;opacity:.85}
 .top nav a:hover{opacity:1;color:var(--gold)}
@@ -91,6 +93,25 @@ select,input{font:500 16px "Manrope",system-ui,sans-serif;padding:13px 12px;bord
   padding:20px 22px;border-left:2px solid var(--gold);background:var(--panel)}
 .missing p{margin:0}
 
+.oform{background:var(--bg);border:1px solid var(--line);padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.oform .full{grid-column:1/-1}
+@media (max-width:560px){.oform{grid-template-columns:1fr;padding:20px}}
+.oform label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--muted)}
+.oform label i{font-style:normal;color:#B3261E}
+textarea{font:500 16px "Manrope",system-ui,sans-serif;padding:13px 12px;border:1px solid var(--line);border-radius:2px;background:var(--bg);color:var(--text);width:100%;min-height:84px;resize:vertical}
+textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.oform .btn{width:100%}
+.oform .btn[disabled]{opacity:.6;cursor:wait}
+.ferr{color:#B3261E;font-size:14px;margin:0;min-height:1em}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.done{border:1px solid #E6D7B0;border-left:3px solid var(--gold);background:var(--bg);padding:26px}
+.done h3{margin:0 0 8px;font-family:"Cormorant Garamond",Georgia,serif;font-size:28px;font-weight:600;color:var(--ink)}
+.done p{margin:0 0 10px;color:var(--muted)}
+.done .oid{font-weight:700;color:var(--text);font-size:18px}
+.enq{display:grid;grid-template-columns:1fr 1.5fr;gap:44px;align-items:start}
+@media (max-width:820px){.enq{grid-template-columns:1fr;gap:24px}}
+.note{margin:18px 0 0;color:var(--muted);font-size:15px;padding-left:16px;border-left:2px solid var(--gold)}
+
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
 @media (max-width:820px){.steps{grid-template-columns:1fr 1fr}}
 @media (max-width:480px){.steps{grid-template-columns:1fr}}
@@ -135,17 +156,19 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
 <header class="top">
   <div class="wrap">
     <a class="mark" href="#home" aria-label="Lakshmi Narasimha Tyres home">
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="14" cy="14" r="12.5" stroke="#B8913A" stroke-width="2"/>
-        <circle cx="14" cy="14" r="5.5" stroke="#B8913A" stroke-width="1.5"/>
-        <path d="M14 1.5v7M14 19.5v7M1.5 14h7M19.5 14h7" stroke="#B8913A" stroke-width="1.2"/>
+      <svg width="40" height="46" viewBox="0 0 80 92" aria-hidden="true">
+        <polygon points="24,22 26,6 33,14 40,2 47,14 54,6 56,22" fill="#B8913A"/>
+        <circle cx="40" cy="59" r="31" fill="none" stroke="#B8913A" stroke-width="2.5"/>
+        <circle cx="40" cy="59" r="25" fill="none" stroke="#B8913A" stroke-width="7" stroke-dasharray="3 4"/>
+        <circle cx="40" cy="59" r="18" fill="#23307A"/>
+        <text x="40" y="66" text-anchor="middle" font-family="Georgia,serif" font-size="18" font-weight="600" fill="#fff">LN</text>
       </svg>
-      <b>Lakshmi Narasimha Tyres</b>
+      <span class="mtxt"><b>Lakshmi Narasimha</b><small>TYRES</small></span>
     </a>
     <nav aria-label="Main">
       <a href="#shop">Shop tyres</a>
+      <a href="#order">Order</a>
       <a href="#how">How to order</a>
-      <a href="#policies">Delivery &amp; payment</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -161,16 +184,16 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
   <div class="wrap">
     <h1>Branded tyres, delivered across India</h1>
     <div class="rule"></div>
-    <p>Bike, car, auto, tractor and lorry tyres from all leading brands. Order on WhatsApp, pay online, get it delivered to your door.</p>
+    <p>Bike, car, auto, tractor and lorry tyres from all leading brands. Order online, pay securely, get it delivered to your door.</p>
     <div class="cta">
       <a class="btn btn-gold" href="#shop">Shop tyres</a>
-      <a class="btn btn-line" href="https://wa.me/919989900961?text=Hello%2C%20I%20want%20to%20order%20tyres" target="_blank" rel="noopener">Order on WhatsApp</a>
+      <a class="btn btn-line" href="#order">Place an order</a>
     </div>
     <div class="trust">
       <div><strong>All India</strong><span>Delivery to every state</span></div>
       <div><strong>All brands</strong><span>MRF, Apollo, CEAT and more</span></div>
       <div><strong>Online payment</strong><span>Pay securely before dispatch</span></div>
-      <div><strong>WhatsApp orders</strong><span>Quick replies, easy ordering</span></div>
+      <div><strong>Easy ordering</strong><span>Order in a minute, right here</span></div>
     </div>
   </div>
 </section>
@@ -179,7 +202,7 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
   <div class="wrap">
     <div class="head">
       <h2>Shop tyres</h2>
-      <p class="lead">Pick your vehicle and size. Tap Get price to receive the latest price on WhatsApp.</p>
+      <p class="lead">Pick your vehicle and size, then tap Order. We confirm the price and delivery before you pay.</p>
     </div>
     <div class="tabs" id="tabs" role="group" aria-label="Vehicle type"></div>
     <div class="filters">
@@ -193,36 +216,64 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
     <p class="count" id="count"></p>
     <div class="grid" id="grid"></div>
     <div class="missing">
-      <p><strong>Can't find your size?</strong> Send us the size or a photo of your tyre.</p>
-      <a class="btn btn-ink" href="https://wa.me/919989900961?text=Hello%2C%20I%20need%20a%20tyre%20size%20that%20is%20not%20listed" target="_blank" rel="noopener">Ask on WhatsApp</a>
+      <p><strong>Can't find your size?</strong> Type it in the order form and we'll find it for you.</p>
+      <a class="btn btn-ink" href="#order">Order any size</a>
     </div>
   </div>
 </section>
 
-<section class="alt" id="how">
+<section class="alt" id="order">
+  <div class="wrap enq">
+    <div>
+      <h2>Place an order</h2>
+      <p class="lead" style="margin-top:14px">Fill in your details. We'll call you to confirm the price, delivery charges and payment before dispatch.</p>
+      <p class="note">The tyre size is printed on the side of the tyre, for example 90/100-10 or 185/65 R15.</p>
+    </div>
+    <div id="orderBox">
+      <form class="oform" id="oform" novalidate>
+        <label class="full">Full name <i>*</i><input name="name" autocomplete="name" required></label>
+        <label>Mobile number <i>*</i><input name="phone" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="10-digit number" required></label>
+        <label>Pincode <i>*</i><input name="pincode" inputmode="numeric" maxlength="6" autocomplete="postal-code" required></label>
+        <label class="full">Delivery address <i>*</i><textarea name="address" autocomplete="street-address" placeholder="House no, street, area, landmark" required></textarea></label>
+        <label>City / Town <i>*</i><input name="city" autocomplete="address-level2" required></label>
+        <label>State <i>*</i><select name="state" id="fState" required></select></label>
+        <label>Vehicle <i>*</i><select name="vehicle" id="fVeh"><option>Bike</option><option>Car</option><option>Auto</option><option>Tractor</option><option>Lorry</option></select></label>
+        <label>Tyre size <i>*</i><input name="size" id="fSize" placeholder="e.g. 185/65 R15" required></label>
+        <label>Brand<select name="brand" id="fBrand"><option>Any brand</option><option>MRF</option><option>Apollo</option><option>CEAT</option><option>JK Tyre</option><option>Bridgestone</option><option>TVS</option><option>Michelin</option><option>Goodyear</option><option>Birla</option></select></label>
+        <label>Quantity<select name="qty" id="fQty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option><option>10</option></select></label>
+        <label class="full">Notes (optional)<textarea name="notes" placeholder="Tube or tubeless, front or rear, anything else"></textarea></label>
+        <div class="hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></div>
+        <p class="ferr full" id="ferr" role="alert"></p>
+        <div class="full"><button class="btn btn-gold" id="obtn" type="submit">Place order</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="how">
   <div class="wrap">
     <div class="head"><h2>How to order</h2></div>
     <div class="steps">
-      <div class="step"><b>1</b><h3>Choose your tyre</h3><p>Find your size above or send it to us on WhatsApp.</p></div>
-      <div class="step"><b>2</b><h3>Get the price</h3><p>We confirm the price, brand and delivery charges.</p></div>
+      <div class="step"><b>1</b><h3>Choose your tyre</h3><p>Find your size above or type it in the order form.</p></div>
+      <div class="step"><b>2</b><h3>Place your order</h3><p>Fill the order form. We call you to confirm price and delivery.</p></div>
       <div class="step"><b>3</b><h3>Pay online</h3><p>Pay securely online to confirm your order.</p></div>
       <div class="step"><b>4</b><h3>Delivered to you</h3><p>We dispatch your tyres to your address anywhere in India.</p></div>
     </div>
   </div>
 </section>
 
-<section id="policies">
+<section class="alt" id="policies">
   <div class="wrap">
     <div class="head"><h2>Delivery &amp; payment</h2></div>
     <div class="pol">
       <div><h3>Delivery</h3><p>We deliver to all states across India. Delivery charges and time depend on your location and are confirmed before you pay.</p></div>
-      <div><h3>Payment</h3><p>Online payment only. Payment details are shared on WhatsApp once your order is confirmed.</p></div>
+      <div><h3>Payment</h3><p>Online payment only. We share payment details after confirming your order on call.</p></div>
       <div><h3>Check your size</h3><p>The tyre size is printed on the sidewall. Send us a photo if you're unsure and we'll help you choose.</p></div>
     </div>
   </div>
 </section>
 
-<section class="alt" id="brands">
+<section id="brands">
   <div class="wrap">
     <div class="head" style="justify-content:center"><h2>All leading brands</h2></div>
     <div class="brands">
@@ -232,7 +283,7 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
   </div>
 </section>
 
-<section id="contact">
+<section class="alt" id="contact">
   <div class="wrap contact">
     <div>
       <h2 style="margin-bottom:18px">Order &amp; enquiries</h2>
@@ -261,13 +312,10 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
 
 <div class="bar">
   <a href="tel:+919989900961">Call</a>
-  <a href="https://wa.me/919989900961" target="_blank" rel="noopener">WhatsApp</a>
+  <a href="#order">Order now</a>
 </div>
 
 <script>
-const PHONE = "919989900961";
-const wa = t => "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(t);
-
 /* ---- TYRE SIZES: add or remove sizes here ---- */
 const SIZES = {
   Bike: {
@@ -316,27 +364,81 @@ tabs.addEventListener("click", e => {
 const norm = s => s.toLowerCase().replace(/[\s\-\/r.]/g,"");
 function render(){
   const q = norm(document.getElementById("q").value);
-  const brand = document.getElementById("brand").value;
   const list = TYRES.filter(t => (kind==="All"||t.v===kind) && (!q || norm(t.size).includes(q)));
   document.getElementById("count").textContent = list.length + (list.length===1?" size":" sizes");
   if(!list.length){
-    document.getElementById("grid").innerHTML = `<div class="empty">No tyres match that size. Ask us on WhatsApp, we'll find it for you.</div>`;
+    document.getElementById("grid").innerHTML = `<div class="empty">No tyres match that size. Type it in the order form below and we'll find it for you.</div>`;
     return;
   }
   let html = "", last = "";
   for (const t of list){
     const key = t.v + " / " + t.group;
     if (key !== last){ html += `<div class="ghead">${t.v} <span>${t.group}</span></div>`; last = key; }
-    const msg = `Hello, I want to order:\nVehicle: ${t.v} (${t.group})\nTyre size: ${t.size}\nBrand: ${brand}\nPlease share the price and delivery charges.`;
     const price = t.price ? `<div class="price">₹${t.price.toLocaleString("en-IN")} <small>per tyre</small></div>` : "";
     html += `<div class="item"><span class="size">${t.size}</span>${price}
-      <a class="btn ${t.price?'btn-gold':'btn-ink'}" href="${wa(msg)}" target="_blank" rel="noopener">${t.price?'Order':'Get price'}</a></div>`;
+      <button class="btn ${t.price?'btn-gold':'btn-ink'}" type="button" data-v="${t.v}" data-s="${t.size}">Order</button></div>`;
   }
   document.getElementById("grid").innerHTML = html;
 }
+document.getElementById("grid").addEventListener("click", e => {
+  const b = e.target.closest("button[data-s]"); if(!b) return;
+  fVeh.value = b.dataset.v;
+  fSize.value = b.dataset.s;
+  fBrand.value = document.getElementById("brand").value;
+  document.getElementById("order").scrollIntoView({behavior:"smooth"});
+  setTimeout(() => document.querySelector('#oform [name="name"]').focus({preventScroll:true}), 600);
+});
 document.getElementById("q").addEventListener("input", render);
 document.getElementById("brand").addEventListener("change", render);
 render();
+
+/* ---- ORDERS: sent to Google Sheet ---- */
+const ORDER_URL = "https://script.google.com/macros/s/AKfycbzXxRLNaPNEFMh8T-la9MI3okaXm9QFGMQKSuCFAokML46Ti83-261rwVbmbzX878vKFg/exec";
+const STATES = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli and Daman and Diu","Delhi","Jammu and Kashmir","Ladakh","Lakshadweep","Puducherry"];
+fState.innerHTML = '<option value="">Select state</option>' + STATES.map(x => `<option>${x}</option>`).join("");
+
+const oform = document.getElementById("oform"), ferr = document.getElementById("ferr"), obtn = document.getElementById("obtn");
+oform.addEventListener("input", () => { ferr.textContent = ""; });
+function newId(){
+  const d = new Date(), p = n => String(n).padStart(2,"0");
+  return "LN" + String(d.getFullYear()).slice(2) + p(d.getMonth()+1) + p(d.getDate()) + "-" + Math.floor(1000 + Math.random()*9000);
+}
+oform.addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = Object.fromEntries(new FormData(oform).entries());
+  for (const k in f) f[k] = String(f[k]).trim();
+  if (f.website) return;
+  if (!f.name) return fail("Enter your name.", "name");
+  if (!/^[6-9]\d{9}$/.test(f.phone)) return fail("Enter a valid 10-digit mobile number.", "phone");
+  if (!/^\d{6}$/.test(f.pincode)) return fail("Enter a valid 6-digit pincode.", "pincode");
+  if (!f.address) return fail("Enter your delivery address.", "address");
+  if (!f.city) return fail("Enter your city or town.", "city");
+  if (!f.state) return fail("Select your state.", "state");
+  if (!f.size) return fail("Enter the tyre size.", "size");
+  f.orderId = newId();
+  delete f.website;
+  obtn.disabled = true; obtn.textContent = "Placing order…";
+  try {
+    await fetch(ORDER_URL, { method: "POST", mode: "no-cors", body: new URLSearchParams(f) });
+    document.getElementById("orderBox").innerHTML = `<div class="done" role="status">
+      <h3>Order received</h3>
+      <p>Thank you, ${esc(f.name)}. Your order ID is</p>
+      <p class="oid">${f.orderId}</p>
+      <p>${esc(f.qty)} × ${esc(f.size)} (${esc(f.brand)}) for ${esc(f.vehicle)}</p>
+      <p>We will call you on ${esc(f.phone)} to confirm the price, delivery charges and payment.</p>
+      <a class="btn btn-ink" href="tel:+919989900961">Call us</a>
+    </div>`;
+    document.getElementById("order").scrollIntoView({behavior:"smooth"});
+  } catch (err) {
+    obtn.disabled = false; obtn.textContent = "Place order";
+    ferr.textContent = "Could not place the order. Check your internet and try again, or call 99899 00961.";
+  }
+});
+function fail(msg, name){
+  ferr.textContent = msg;
+  const el = oform.querySelector(`[name="${name}"]`); if (el) el.focus();
+}
+function esc(t){ return String(t).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 document.getElementById("yr").textContent = new Date().getFullYear();
 </script>
 </body>
