@@ -1,1 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lakshmi Narasimha Tyres – Tyres delivered across India</title>
+<meta name="description" content="Buy bike, car, auto, tractor and lorry tyres online from Lakshmi Narasimha Tyres. All leading brands, delivered across India. Order on WhatsApp 99899 00961.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#23307A; --ink-2:#2E3D8F; --gold:#B8913A; --gold-soft:#D9C28E;
+  --bg:#FFFFFF; --panel:#F7F5FB; --text:#1F2547; --muted:#5E6878; --line:#E7E2EF;
+  --on-ink:#F2F0EA;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
 
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(255,255,255,.96);color:var(--ink);
+  border-bottom:1px solid #E6D7B0;box-shadow:0 1px 0 #F3ECDA}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mark b{font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;font-weight:700}
+.top nav{display:flex;gap:22px;font-size:14px}
+.top nav a{text-decoration:none;opacity:.85}
+.top nav a:hover{opacity:1;color:var(--gold)}
+@media (max-width:760px){.top nav{display:none}}
+
+.hero{background:linear-gradient(160deg,#FCFAF4 0%,#F4F0FB 60%,#EEF0FA 100%);color:var(--ink);padding:72px 0 0;position:relative;overflow:hidden}
+.hero .ring{position:absolute;right:-160px;top:40%;transform:translateY(-50%);width:520px;height:520px;opacity:.35;pointer-events:none}
+.hero h1{margin:0;font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;
+  font-size:clamp(42px,8vw,80px);line-height:1.03;letter-spacing:-.01em;max-width:13ch}
+.hero .rule{width:64px;height:2px;background:var(--gold);margin:26px 0 20px}
+.hero p{margin:0;max-width:46ch;font-size:18px;color:#4A5070}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 26px;
+  border-radius:2px;font:600 15px "Manrope",system-ui,sans-serif;letter-spacing:.02em;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-gold{background:var(--gold);color:#101820}
+.btn-gold:hover{background:#C9A24A}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn-ink{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+.btn-ink:hover{background:var(--ink-2)}
+.btn-outline{border-color:var(--line);color:var(--text);background:transparent}
+.btn-outline:hover{border-color:var(--gold)}
+.btn:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible,.tab:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+.trust{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #E6D7B0}
+@media (max-width:760px){.trust{grid-template-columns:repeat(2,1fr)}}
+.trust div{padding:22px 18px 24px;border-right:1px solid #EDE3C9}
+.trust div:last-child{border-right:0}
+.trust strong{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;font-weight:700;color:#9C7A2E;line-height:1.2}
+.trust span{font-size:14px;color:var(--muted)}
+
+section{padding:76px 0}
+.head{display:flex;align-items:end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+h2{margin:0;font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:clamp(32px,5vw,44px);line-height:1.1}
+.lead{margin:0;color:var(--muted);max-width:44ch}
+.alt{background:var(--panel)}
+
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:16px}
+.tab{flex:none;border:1px solid var(--line);background:var(--bg);color:var(--text);padding:10px 18px;border-radius:2px;
+  font:600 14px "Manrope",system-ui,sans-serif;cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+.filters{display:grid;grid-template-columns:1.4fr 1fr;gap:12px;margin-bottom:24px}
+@media (max-width:560px){.filters{grid-template-columns:1fr}}
+select,input{font:500 16px "Manrope",system-ui,sans-serif;padding:13px 12px;border:1px solid var(--line);border-radius:2px;
+  background:var(--bg);color:var(--text);width:100%}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+@media (max-width:420px){.grid{grid-template-columns:1fr 1fr}}
+.ghead{grid-column:1/-1;background:var(--panel);padding:14px 18px 10px;font-weight:700;font-size:15px}
+.ghead span{color:var(--gold);font-weight:600;margin-left:6px}
+.count{color:var(--muted);font-size:14px;margin:0 0 12px}
+.item{background:var(--bg);padding:16px 16px;display:flex;flex-direction:column;gap:2px}
+.item .size{font-family:"Cormorant Garamond",Georgia,serif;font-size:25px;font-weight:600;line-height:1.15}
+.item .price{margin-top:10px;font-weight:700;font-size:18px}
+.item .price small{font-weight:500;color:var(--muted);font-size:13px}
+.item .btn{margin-top:10px;min-height:40px;padding:0 12px;font-size:14px}
+.empty{background:var(--bg);padding:30px;grid-column:1/-1;text-align:center;color:var(--muted)}
+.missing{margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;
+  padding:20px 22px;border-left:2px solid var(--gold);background:var(--panel)}
+.missing p{margin:0}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+@media (max-width:820px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+.step{border-top:2px solid var(--gold);padding-top:16px}
+.step b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:40px;font-weight:600;color:var(--gold);line-height:1}
+.step h3{margin:10px 0 6px;font-size:17px}
+.step p{margin:0;color:var(--muted);font-size:15px}
+
+.pol{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+@media (max-width:820px){.pol{grid-template-columns:1fr}}
+.pol div{background:var(--bg);padding:26px}
+.pol h3{margin:0 0 8px;font-family:"Cormorant Garamond",Georgia,serif;font-size:26px;font-weight:600}
+.pol p{margin:0;color:var(--muted);font-size:15px}
+
+.brands{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 40px}
+.brands span{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(22px,3.4vw,30px);font-weight:600;opacity:.8}
+
+.contact{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+@media (max-width:760px){.contact{grid-template-columns:1fr;gap:24px}}
+.phone{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(40px,7vw,56px);font-weight:600;text-decoration:none;display:block;line-height:1}
+.contact .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.contact address{font-style:normal;color:var(--muted);font-size:15px;line-height:1.7;border-left:1px solid var(--line);padding-left:22px}
+.contact address strong{color:var(--text);display:block;margin-bottom:4px}
+
+footer{background:#F4F0FB;color:var(--muted);padding:30px 0;font-size:14px;border-top:1px solid #E6D7B0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-size:18px}
+
+.bar{display:none}
+@media (max-width:760px){
+  .bar{position:fixed;left:0;right:0;bottom:0;z-index:10;display:grid;grid-template-columns:1fr 1fr;
+    background:#fff;border-top:1px solid #E6D7B0;padding-bottom:env(safe-area-inset-bottom,0px)}
+  .bar a{display:flex;align-items:center;justify-content:center;min-height:56px;color:var(--ink);
+    text-decoration:none;font-weight:600;font-size:15px}
+  .bar a + a{background:var(--gold);color:#101820}
+  footer{padding-bottom:calc(86px + env(safe-area-inset-bottom,0px))}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#home" aria-label="Lakshmi Narasimha Tyres home">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <circle cx="14" cy="14" r="12.5" stroke="#B8913A" stroke-width="2"/>
+        <circle cx="14" cy="14" r="5.5" stroke="#B8913A" stroke-width="1.5"/>
+        <path d="M14 1.5v7M14 19.5v7M1.5 14h7M19.5 14h7" stroke="#B8913A" stroke-width="1.2"/>
+      </svg>
+      <b>Lakshmi Narasimha Tyres</b>
+    </a>
+    <nav aria-label="Main">
+      <a href="#shop">Shop tyres</a>
+      <a href="#how">How to order</a>
+      <a href="#policies">Delivery &amp; payment</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home" style="padding-bottom:0">
+  <svg class="ring" viewBox="0 0 520 520" fill="none" aria-hidden="true">
+    <circle cx="260" cy="260" r="250" stroke="#D9C28E" stroke-width="2"/>
+    <circle cx="260" cy="260" r="200" stroke="#D9C28E" stroke-width="1"/>
+    <circle cx="260" cy="260" r="110" stroke="#D9C28E" stroke-width="2"/>
+    <circle cx="260" cy="260" r="228" stroke="#D9C28E" stroke-width="30" stroke-dasharray="6 14"/>
+  </svg>
+  <div class="wrap">
+    <h1>Branded tyres, delivered across India</h1>
+    <div class="rule"></div>
+    <p>Bike, car, auto, tractor and lorry tyres from all leading brands. Order on WhatsApp, pay online, get it delivered to your door.</p>
+    <div class="cta">
+      <a class="btn btn-gold" href="#shop">Shop tyres</a>
+      <a class="btn btn-line" href="https://wa.me/919989900961?text=Hello%2C%20I%20want%20to%20order%20tyres" target="_blank" rel="noopener">Order on WhatsApp</a>
+    </div>
+    <div class="trust">
+      <div><strong>All India</strong><span>Delivery to every state</span></div>
+      <div><strong>All brands</strong><span>MRF, Apollo, CEAT and more</span></div>
+      <div><strong>Online payment</strong><span>Pay securely before dispatch</span></div>
+      <div><strong>WhatsApp orders</strong><span>Quick replies, easy ordering</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="shop">
+  <div class="wrap">
+    <div class="head">
+      <h2>Shop tyres</h2>
+      <p class="lead">Pick your vehicle and size. Tap Get price to receive the latest price on WhatsApp.</p>
+    </div>
+    <div class="tabs" id="tabs" role="group" aria-label="Vehicle type"></div>
+    <div class="filters">
+      <input id="q" type="search" placeholder="Search size, e.g. 185/65 R15" aria-label="Search tyre size">
+      <select id="brand" aria-label="Brand">
+        <option>Any brand</option><option>MRF</option><option>Apollo</option><option>CEAT</option>
+        <option>JK Tyre</option><option>Bridgestone</option><option>TVS</option><option>Michelin</option>
+        <option>Goodyear</option><option>Birla</option>
+      </select>
+    </div>
+    <p class="count" id="count"></p>
+    <div class="grid" id="grid"></div>
+    <div class="missing">
+      <p><strong>Can't find your size?</strong> Send us the size or a photo of your tyre.</p>
+      <a class="btn btn-ink" href="https://wa.me/919989900961?text=Hello%2C%20I%20need%20a%20tyre%20size%20that%20is%20not%20listed" target="_blank" rel="noopener">Ask on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="how">
+  <div class="wrap">
+    <div class="head"><h2>How to order</h2></div>
+    <div class="steps">
+      <div class="step"><b>1</b><h3>Choose your tyre</h3><p>Find your size above or send it to us on WhatsApp.</p></div>
+      <div class="step"><b>2</b><h3>Get the price</h3><p>We confirm the price, brand and delivery charges.</p></div>
+      <div class="step"><b>3</b><h3>Pay online</h3><p>Pay securely online to confirm your order.</p></div>
+      <div class="step"><b>4</b><h3>Delivered to you</h3><p>We dispatch your tyres to your address anywhere in India.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="policies">
+  <div class="wrap">
+    <div class="head"><h2>Delivery &amp; payment</h2></div>
+    <div class="pol">
+      <div><h3>Delivery</h3><p>We deliver to all states across India. Delivery charges and time depend on your location and are confirmed before you pay.</p></div>
+      <div><h3>Payment</h3><p>Online payment only. Payment details are shared on WhatsApp once your order is confirmed.</p></div>
+      <div><h3>Check your size</h3><p>The tyre size is printed on the sidewall. Send us a photo if you're unsure and we'll help you choose.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="brands">
+  <div class="wrap">
+    <div class="head" style="justify-content:center"><h2>All leading brands</h2></div>
+    <div class="brands">
+      <span>MRF</span><span>Apollo</span><span>CEAT</span><span>JK Tyre</span><span>Bridgestone</span>
+      <span>TVS</span><span>Michelin</span><span>Goodyear</span><span>Birla</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div>
+      <h2 style="margin-bottom:18px">Order &amp; enquiries</h2>
+      <a class="phone" href="tel:+919989900961">99899 00961</a>
+      <p class="lead" style="margin-top:10px">Same number for calls and WhatsApp</p>
+      <div class="row">
+        <a class="btn btn-ink" href="https://wa.me/919989900961" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-outline" href="tel:+919989900961">Call</a>
+      </div>
+    </div>
+    <address>
+      <strong>Lakshmi Narasimha Tyres</strong>
+      18-38/6, Indira Chowk, Opp. Sindhu Hospital<br>
+      Huzurnagar, Suryapet District<br>
+      Telangana 508204, India
+    </address>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>Lakshmi Narasimha Tyres</b>
+    <span>© <span id="yr"></span> Delivering across India</span>
+  </div>
+</footer>
+
+<div class="bar">
+  <a href="tel:+919989900961">Call</a>
+  <a href="https://wa.me/919989900961" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script>
+const PHONE = "919989900961";
+const wa = t => "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(t);
+
+/* ---- TYRE SIZES: add or remove sizes here ---- */
+const SIZES = {
+  Bike: {
+    "Motorcycle": ["2.50-16","2.50-17","2.75-17","2.75-18","3.00-17","3.00-18","3.25-19","3.50-19","80/100-17","80/100-18","90/90-17","90/90-18","90/90-19","100/80-17","100/90-17","100/90-18","100/90-19","110/70-17","110/80-17","110/80-19","110/90-17","120/70-17","120/80-17","130/70-17","140/70-17","150/60-17"],
+    "Scooter": ["3.00-10","3.50-10","90/90-10","90/100-10","100/90-10","90/90-12","100/80-12","110/70-12","110/80-12","120/70-12","130/70-12"]
+  },
+  Car: {
+    "Hatchback": ["145/70 R12","145/80 R12","155/65 R13","155/70 R13","155/80 R13","165/65 R14","165/70 R14","165/80 R14","175/65 R14","175/70 R13","175/70 R14"],
+    "Sedan": ["175/60 R15","175/65 R15","185/55 R15","185/60 R15","185/65 R14","185/65 R15","185/70 R14","195/55 R16","195/60 R16","195/65 R15","205/55 R16","205/60 R16"],
+    "SUV & MUV": ["205/65 R16","215/55 R17","215/60 R16","215/60 R17","215/65 R16","215/75 R15","225/65 R17","235/60 R18","235/65 R17","235/70 R16","245/70 R16","255/70 R15","265/60 R18","265/65 R17"]
+  },
+  Auto: {
+    "Three-wheeler": ["4.00-8","4.50-10","4.00-12","4.50-12","5.00-12"],
+    "E-rickshaw": ["3.75-12","3.00-12"]
+  },
+  Tractor: {
+    "Front": ["5.50-16","6.00-16","6.50-16","7.50-16","6.50-20"],
+    "Rear": ["12.4-24","12.4-28","13.6-24","13.6-28","14.9-24","14.9-28","16.9-28","16.9-30","18.4-30","18.4-34"],
+    "Trailer": ["7.50-16 Trailer","9.00-16 Trailer"]
+  },
+  Lorry: {
+    "Light commercial": ["6.00-16","7.00-15","7.00-16","7.50-16","8.25-16","185 R14 C","195 R15 C","7.50 R16","8.25 R16","215/75 R17.5","235/75 R17.5"],
+    "Truck & bus": ["8.25-20","9.00-20","10.00-20","11.00-20","12.00-20","12.00-24","10.00 R20","11.00 R20","295/80 R22.5","295/90 R20","315/80 R22.5"]
+  }
+};
+
+/* ---- PRICES: add prices here later, e.g.  "2.75-18": 1450, ---- */
+const PRICES = {
+};
+
+const TYRES = [];
+for (const v in SIZES) for (const g in SIZES[v]) for (const size of SIZES[v][g])
+  TYRES.push({v, group:g, size, price: PRICES[size] || null});
+
+const KINDS = ["All","Bike","Car","Auto","Tractor","Lorry"];
+let kind = "All";
+const tabs = document.getElementById("tabs");
+tabs.innerHTML = KINDS.map(k => `<button class="tab" type="button" data-k="${k}" aria-pressed="${k===kind}">${k}</button>`).join("");
+tabs.addEventListener("click", e => {
+  const b = e.target.closest(".tab"); if(!b) return;
+  kind = b.dataset.k;
+  tabs.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-pressed", t.dataset.k===kind));
+  render();
+});
+
+const norm = s => s.toLowerCase().replace(/[\s\-\/r.]/g,"");
+function render(){
+  const q = norm(document.getElementById("q").value);
+  const brand = document.getElementById("brand").value;
+  const list = TYRES.filter(t => (kind==="All"||t.v===kind) && (!q || norm(t.size).includes(q)));
+  document.getElementById("count").textContent = list.length + (list.length===1?" size":" sizes");
+  if(!list.length){
+    document.getElementById("grid").innerHTML = `<div class="empty">No tyres match that size. Ask us on WhatsApp, we'll find it for you.</div>`;
+    return;
+  }
+  let html = "", last = "";
+  for (const t of list){
+    const key = t.v + " / " + t.group;
+    if (key !== last){ html += `<div class="ghead">${t.v} <span>${t.group}</span></div>`; last = key; }
+    const msg = `Hello, I want to order:\nVehicle: ${t.v} (${t.group})\nTyre size: ${t.size}\nBrand: ${brand}\nPlease share the price and delivery charges.`;
+    const price = t.price ? `<div class="price">₹${t.price.toLocaleString("en-IN")} <small>per tyre</small></div>` : "";
+    html += `<div class="item"><span class="size">${t.size}</span>${price}
+      <a class="btn ${t.price?'btn-gold':'btn-ink'}" href="${wa(msg)}" target="_blank" rel="noopener">${t.price?'Order':'Get price'}</a></div>`;
+  }
+  document.getElementById("grid").innerHTML = html;
+}
+document.getElementById("q").addEventListener("input", render);
+document.getElementById("brand").addEventListener("change", render);
+render();
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
