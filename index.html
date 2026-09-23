@@ -87,8 +87,17 @@ select,input{font:500 16px "Manrope",system-ui,sans-serif;padding:13px 12px;bord
 .item{background:var(--bg);padding:16px 16px;display:flex;flex-direction:column;gap:2px}
 .item .size{font-family:"Cormorant Garamond",Georgia,serif;font-size:25px;font-weight:600;line-height:1.15}
 .item .price{margin-top:10px;font-weight:700;font-size:18px}
-.item .price small{font-weight:500;color:var(--muted);font-size:13px}
+.item .price small{display:inline;font-size:13px;font-weight:500}
 .item .btn{margin-top:10px;min-height:40px;padding:0 12px;font-size:14px}
+.item.open{grid-column:1/-1;background:var(--panel)}
+.opts{margin-top:12px;border-top:1px solid var(--line)}
+.orow{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.orow:last-child{border-bottom:0}
+.orow .on{font-weight:600;font-size:15px}
+.orow .op{font-weight:700;font-size:16px}
+.orow .btn{margin-top:0;min-height:36px;padding:0 16px}
+.oout{color:#B3261E;font-weight:600;font-size:14px}
+@media (max-width:420px){.orow{grid-template-columns:1fr auto;row-gap:6px}.orow .btn{grid-column:1/-1;width:100%}}
 .empty{background:var(--bg);padding:30px;grid-column:1/-1;text-align:center;color:var(--muted)}
 .missing{margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;
   padding:20px 22px;border-left:2px solid var(--gold);background:var(--panel)}
@@ -99,6 +108,7 @@ select,input{font:500 16px "Manrope",system-ui,sans-serif;padding:13px 12px;bord
 @media (max-width:560px){.oform{grid-template-columns:1fr;padding:20px}}
 .oform label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--muted)}
 .oform label i{font-style:normal;color:#B3261E}
+.oform .hint{font-size:12px;font-weight:400;color:var(--muted)}
 textarea{font:500 16px "Manrope",system-ui,sans-serif;padding:13px 12px;border:1px solid var(--line);border-radius:2px;background:var(--bg);color:var(--text);width:100%;min-height:84px;resize:vertical}
 textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .oform .btn{width:100%}
@@ -208,13 +218,8 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
       <p class="lead">Pick your vehicle and size, then tap Order. We confirm the price and delivery before you pay.</p>
     </div>
     <div class="tabs" id="tabs" role="group" aria-label="Vehicle type"></div>
-    <div class="filters">
+    <div class="filters" style="grid-template-columns:1fr">
       <input id="q" type="search" placeholder="Search size, e.g. 185/65 R15" aria-label="Search tyre size">
-      <select id="brand" aria-label="Brand">
-        <option>Any brand</option><option>MRF</option><option>Apollo</option><option>CEAT</option>
-        <option>JK Tyre</option><option>Bridgestone</option><option>TVS</option><option>Michelin</option>
-        <option>Goodyear</option><option>Birla</option>
-      </select>
     </div>
     <p class="count" id="count"></p>
     <div class="grid" id="grid"></div>
@@ -243,7 +248,7 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
         <label>Vehicle <i>*</i><select name="vehicle" id="fVeh"><option>Bike</option><option>Car</option><option>Auto</option></select></label>
         <label>Tyre size <i>*</i><input name="size" id="fSize" placeholder="e.g. 185/65 R15" required></label>
         <label>Brand<select name="brand" id="fBrand"><option>Any brand</option><option>MRF</option><option>Apollo</option><option>CEAT</option><option>JK Tyre</option><option>Bridgestone</option><option>TVS</option><option>Michelin</option><option>Goodyear</option><option>Birla</option></select></label>
-        <label>Quantity<select name="qty" id="fQty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option><option>10</option></select></label>
+        <label>Quantity<select name="qty" id="fQty"><option>1</option><option>2</option><option>3</option><option>4</option></select><span class="hint">Need more than 4? Call us on 99899 00961.</span></label>
         <label class="full">Notes (optional)<textarea name="notes" placeholder="Tube or tubeless, front or rear, anything else"></textarea></label>
         <div class="hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></div>
         <p class="ferr full" id="ferr" role="alert"></p>
@@ -320,75 +325,105 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
 </div>
 
 <script>
-/* ---- TYRE SIZES: add or remove sizes here ---- */
-const SIZES = {
-  Bike: {
-    "Motorcycle": ["2.50-16","2.50-17","2.75-17","2.75-18","3.00-17","3.00-18","3.25-19","3.50-19","80/100-17","80/100-18","90/90-17","90/90-18","90/90-19","100/80-17","100/90-17","100/90-18","100/90-19","110/70-17","110/80-17","110/80-19","110/90-17","120/70-17","120/80-17","130/70-17","140/70-17","150/60-17"],
-    "Scooter": ["3.00-10","3.50-10","90/90-10","90/100-10","100/90-10","90/90-12","100/80-12","110/70-12","110/80-12","120/70-12","130/70-12"]
-  },
-  Car: {
-    "Hatchback": ["145/70 R12","145/80 R12","155/65 R13","155/70 R13","155/80 R13","165/65 R14","165/70 R14","165/80 R14","175/65 R14","175/70 R13","175/70 R14"],
-    "Sedan": ["175/60 R15","175/65 R15","185/55 R15","185/60 R15","185/65 R14","185/65 R15","185/70 R14","195/55 R16","195/60 R16","195/65 R15","205/55 R16","205/60 R16"],
-    "SUV & MUV": ["205/65 R16","215/55 R17","215/60 R16","215/60 R17","215/65 R16","215/75 R15","225/65 R17","235/60 R18","235/65 R17","235/70 R16","245/70 R16","255/70 R15","265/60 R18","265/65 R17"]
-  },
-  Auto: {
-    "Three-wheeler": ["4.00-8","4.50-10","4.00-12","4.50-12","5.00-12"],
-    "E-rickshaw": ["3.75-12","3.00-12"]
+/* ---- Catalog + orders come from the Google Sheet via this Apps Script ---- */
+const API_URL = "https://script.google.com/macros/s/AKfycbxTumKcW2DqJX53DrR_AaySjvld7qehl4ToSGQhNefbBgwvv146ZodghFOwlQqew7qt/exec";
+
+const gridEl = document.getElementById("grid");
+const countEl = document.getElementById("count");
+const tabsEl = document.getElementById("tabs");
+let TYRES = [], KINDS = ["All"], kind = "All";
+
+function esc(t){ return String(t).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+const norm = s => String(s).toLowerCase().replace(/[\s\-\/r.]/g,"");
+const rupees = n => "₹" + Number(n).toLocaleString("en-IN");
+
+function build(items){
+  const map = new Map();
+  for (const it of items){
+    const key = it.v + "|" + it.g + "|" + it.size;
+    if (!map.has(key)) map.set(key, {v: it.v, group: it.g, size: it.size, opts: []});
+    if (it.price) map.get(key).opts.push({brand: it.brand, pattern: it.pattern, price: it.price, out: !!it.out});
   }
-};
-
-/* ---- PRICES: add prices here later, e.g.  "2.75-18": 1450, ---- */
-const PRICES = {
-};
-
-const TYRES = [];
-for (const v in SIZES) for (const g in SIZES[v]) for (const size of SIZES[v][g])
-  TYRES.push({v, group:g, size, price: PRICES[size] || null});
-
-const KINDS = ["All","Bike","Car","Auto"];
-let kind = "All";
-const tabs = document.getElementById("tabs");
-tabs.innerHTML = KINDS.map(k => `<button class="tab" type="button" data-k="${k}" aria-pressed="${k===kind}">${k}</button>`).join("");
-tabs.addEventListener("click", e => {
-  const b = e.target.closest(".tab"); if(!b) return;
-  kind = b.dataset.k;
-  tabs.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-pressed", t.dataset.k===kind));
+  TYRES = [...map.values()];
+  for (const t of TYRES) t.opts.sort((a,b) => a.price - b.price);
+  KINDS = ["All", ...new Set(TYRES.map(t => t.v))];
+  tabsEl.innerHTML = KINDS.map(k => `<button class="tab" type="button" data-k="${esc(k)}" aria-pressed="${k===kind}">${esc(k)}</button>`).join("");
   render();
-});
+}
 
-const norm = s => s.toLowerCase().replace(/[\s\-\/r.]/g,"");
 function render(){
   const q = norm(document.getElementById("q").value);
   const list = TYRES.filter(t => (kind==="All"||t.v===kind) && (!q || norm(t.size).includes(q)));
-  document.getElementById("count").textContent = list.length + (list.length===1?" size":" sizes");
+  countEl.textContent = list.length + (list.length===1 ? " size" : " sizes");
   if(!list.length){
-    document.getElementById("grid").innerHTML = `<div class="empty">No tyres match that size. Type it in the order form below and we'll find it for you.</div>`;
+    gridEl.innerHTML = `<div class="empty">No tyres match that size. Type it in the order form below and we'll find it for you.</div>`;
     return;
   }
   let html = "", last = "";
   for (const t of list){
     const key = t.v + " / " + t.group;
-    if (key !== last){ html += `<div class="ghead">${t.v} <span>${t.group}</span></div>`; last = key; }
-    const price = t.price ? `<div class="price">₹${t.price.toLocaleString("en-IN")} <small>per tyre</small></div>` : "";
-    html += `<div class="item"><span class="size">${t.size}</span>${price}
-      <button class="btn ${t.price?'btn-gold':'btn-ink'}" type="button" data-v="${t.v}" data-s="${t.size}">Order</button></div>`;
+    if (key !== last){ html += `<div class="ghead">${esc(t.v)} <span>${esc(t.group)}</span></div>`; last = key; }
+    const live = t.opts.filter(o => !o.out);
+    if (t.opts.length){
+      const rows = t.opts.map(o => `<div class="orow">
+          <span class="on">${esc(o.brand)}${o.pattern ? " " + esc(o.pattern) : ""}</span>
+          <span class="op">${rupees(o.price)}</span>
+          ${o.out
+            ? `<span class="oout">Out of stock</span>`
+            : `<button class="btn btn-gold" type="button" data-v="${esc(t.v)}" data-s="${esc(t.size)}" data-b="${esc(o.brand)}" data-p="${esc(o.pattern)}" data-pr="${o.price}">Order</button>`}
+        </div>`).join("");
+      html += `<div class="item"><span class="size">${esc(t.size)}</span>
+        ${live.length
+          ? `<div class="price"><small>from</small> ${rupees(live[0].price)}</div>`
+          : `<div class="price oout">Out of stock</div>`}
+        <button class="btn btn-ink toggle" type="button">View prices</button>
+        <div class="opts" hidden>${rows}</div></div>`;
+    } else {
+      html += `<div class="item"><span class="size">${esc(t.size)}</span>
+        <button class="btn btn-ink" type="button" data-v="${esc(t.v)}" data-s="${esc(t.size)}">Get price</button></div>`;
+    }
   }
-  document.getElementById("grid").innerHTML = html;
+  gridEl.innerHTML = html;
 }
-document.getElementById("grid").addEventListener("click", e => {
+
+tabsEl.addEventListener("click", e => {
+  const b = e.target.closest(".tab"); if(!b) return;
+  kind = b.dataset.k;
+  tabsEl.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-pressed", t.dataset.k===kind));
+  render();
+});
+gridEl.addEventListener("click", e => {
+  const tg = e.target.closest(".toggle");
+  if (tg){
+    const card = tg.closest(".item"), box = card.querySelector(".opts"), open = !box.hidden;
+    box.hidden = open; card.classList.toggle("open", !open);
+    tg.textContent = open ? "View prices" : "Hide prices";
+    return;
+  }
   const b = e.target.closest("button[data-s]"); if(!b) return;
   fVeh.value = b.dataset.v;
   fSize.value = b.dataset.s;
-  fBrand.value = document.getElementById("brand").value;
+  if (b.dataset.b){
+    if (![...fBrand.options].some(o => o.value === b.dataset.b)) fBrand.add(new Option(b.dataset.b, b.dataset.b));
+    fBrand.value = b.dataset.b;
+    document.querySelector('#oform [name="notes"]').value =
+      (b.dataset.p ? "Pattern: " + b.dataset.p + ". " : "") + "Listed price " + rupees(b.dataset.pr) + " per tyre.";
+  }
   document.getElementById("order").scrollIntoView({behavior:"smooth"});
   setTimeout(() => document.querySelector('#oform [name="name"]').focus({preventScroll:true}), 600);
 });
 document.getElementById("q").addEventListener("input", render);
-document.getElementById("brand").addEventListener("change", render);
-render();
 
-/* ---- ORDERS: sent to Google Sheet ---- */
-const ORDER_URL = "https://script.google.com/macros/s/AKfycbzXxRLNaPNEFMh8T-la9MI3okaXm9QFGMQKSuCFAokML46Ti83-261rwVbmbzX878vKFg/exec";
+countEl.textContent = "Loading tyres…";
+fetch(API_URL)
+  .then(r => r.json())
+  .then(d => build(d.items || []))
+  .catch(() => {
+    countEl.textContent = "";
+    gridEl.innerHTML = `<div class="empty">Couldn't load the tyre list just now. Please use the order form below or call 99899 00961.</div>`;
+  });
+
+/* ---- ORDERS ---- */
 const STATES = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli and Daman and Diu","Delhi","Jammu and Kashmir","Ladakh","Lakshadweep","Puducherry"];
 fState.innerHTML = '<option value="">Select state</option>' + STATES.map(x => `<option>${x}</option>`).join("");
 
@@ -414,7 +449,7 @@ oform.addEventListener("submit", async e => {
   delete f.website;
   obtn.disabled = true; obtn.textContent = "Placing order…";
   try {
-    await fetch(ORDER_URL, { method: "POST", mode: "no-cors", body: new URLSearchParams(f) });
+    await fetch(API_URL, { method: "POST", mode: "no-cors", body: new URLSearchParams(f) });
     document.getElementById("orderBox").innerHTML = `<div class="done" role="status">
       <h3>Order received</h3>
       <p>Thank you, ${esc(f.name)}. Your order ID is</p>
@@ -433,7 +468,6 @@ function fail(msg, name){
   ferr.textContent = msg;
   const el = oform.querySelector(`[name="${name}"]`); if (el) el.focus();
 }
-function esc(t){ return String(t).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 document.getElementById("yr").textContent = new Date().getFullYear();
 </script>
 </body>
