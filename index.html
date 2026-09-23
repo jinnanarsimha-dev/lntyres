@@ -5,7 +5,7 @@
 <meta name="color-scheme" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Lakshmi Narasimha Tyres – Tyres delivered across India</title>
-<meta name="description" content="Buy bike, car, auto, tractor and lorry tyres online from Lakshmi Narasimha Tyres. All leading brands, delivered across India. Order online or call 99899 00961.">
+<meta name="description" content="Buy bike, car and auto tyres online from Lakshmi Narasimha Tyres. All leading brands, delivered across India. Order online or call 99899 00961.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 80 92%27%3E%3Cpolygon points=%2724,22 26,6 33,14 40,2 47,14 54,6 56,22%27 fill=%27%23B8913A%27/%3E%3Ccircle cx=%2740%27 cy=%2759%27 r=%2731%27 fill=%27none%27 stroke=%27%23B8913A%27 stroke-width=%273%27/%3E%3Ccircle cx=%2740%27 cy=%2759%27 r=%2722%27 fill=%27%2323307A%27/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -184,7 +184,7 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
   <div class="wrap">
     <h1>Branded tyres, delivered across India</h1>
     <div class="rule"></div>
-    <p>Bike, car, auto, tractor and lorry tyres from all leading brands. Order online, pay securely, get it delivered to your door.</p>
+    <p>Bike, car and auto tyres from all leading brands. Order online, pay securely, get it delivered to your door.</p>
     <div class="cta">
       <a class="btn btn-gold" href="#shop">Shop tyres</a>
       <a class="btn btn-line" href="#order">Place an order</a>
@@ -237,7 +237,7 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
         <label class="full">Delivery address <i>*</i><textarea name="address" autocomplete="street-address" placeholder="House no, street, area, landmark" required></textarea></label>
         <label>City / Town <i>*</i><input name="city" autocomplete="address-level2" required></label>
         <label>State <i>*</i><select name="state" id="fState" required></select></label>
-        <label>Vehicle <i>*</i><select name="vehicle" id="fVeh"><option>Bike</option><option>Car</option><option>Auto</option><option>Tractor</option><option>Lorry</option></select></label>
+        <label>Vehicle <i>*</i><select name="vehicle" id="fVeh"><option>Bike</option><option>Car</option><option>Auto</option></select></label>
         <label>Tyre size <i>*</i><input name="size" id="fSize" placeholder="e.g. 185/65 R15" required></label>
         <label>Brand<select name="brand" id="fBrand"><option>Any brand</option><option>MRF</option><option>Apollo</option><option>CEAT</option><option>JK Tyre</option><option>Bridgestone</option><option>TVS</option><option>Michelin</option><option>Goodyear</option><option>Birla</option></select></label>
         <label>Quantity<select name="qty" id="fQty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option><option>10</option></select></label>
@@ -330,15 +330,6 @@ const SIZES = {
   Auto: {
     "Three-wheeler": ["4.00-8","4.50-10","4.00-12","4.50-12","5.00-12"],
     "E-rickshaw": ["3.75-12","3.00-12"]
-  },
-  Tractor: {
-    "Front": ["5.50-16","6.00-16","6.50-16","7.50-16","6.50-20"],
-    "Rear": ["12.4-24","12.4-28","13.6-24","13.6-28","14.9-24","14.9-28","16.9-28","16.9-30","18.4-30","18.4-34"],
-    "Trailer": ["7.50-16 Trailer","9.00-16 Trailer"]
-  },
-  Lorry: {
-    "Light commercial": ["6.00-16","7.00-15","7.00-16","7.50-16","8.25-16","185 R14 C","195 R15 C","7.50 R16","8.25 R16","215/75 R17.5","235/75 R17.5"],
-    "Truck & bus": ["8.25-20","9.00-20","10.00-20","11.00-20","12.00-20","12.00-24","10.00 R20","11.00 R20","295/80 R22.5","295/90 R20","315/80 R22.5"]
   }
 };
 
@@ -350,7 +341,7 @@ const TYRES = [];
 for (const v in SIZES) for (const g in SIZES[v]) for (const size of SIZES[v][g])
   TYRES.push({v, group:g, size, price: PRICES[size] || null});
 
-const KINDS = ["All","Bike","Car","Auto","Tractor","Lorry"];
+const KINDS = ["All","Bike","Car","Auto"];
 let kind = "All";
 const tabs = document.getElementById("tabs");
 tabs.innerHTML = KINDS.map(k => `<button class="tab" type="button" data-k="${k}" aria-pressed="${k===kind}">${k}</button>`).join("");
